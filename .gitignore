@@ -1,0 +1,8 @@
+*.gem
+Gemfile.lock
+pkg/
+test/dummy/log/
+test/dummy/tmp/
+test/dummy/db/*.sqlite3*
+log/
+.DS_Store
