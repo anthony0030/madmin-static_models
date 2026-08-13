@@ -2,9 +2,9 @@ source "https://rubygems.org"
 
 gemspec
 
-# Until the extension load hooks PR is merged and released upstream
-# (see https://github.com/excid3/madmin/pull/331 discussion):
-gem "madmin", github: "anthony0030/madmin", branch: "extension-load-hooks"
+# Load hooks shipped in madmin 2.5.1; until the read-only and extension-seams
+# PRs (excid3/madmin#348, #352) are merged and released, use the fork:
+gem "madmin", github: "anthony0030/madmin"
 
 group :development, :test do
   gem "rails"

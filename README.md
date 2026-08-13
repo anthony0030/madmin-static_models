@@ -17,8 +17,9 @@ Add to your Gemfile:
 ```ruby
 gem "madmin-static_models"
 
-# Until the madmin extension hooks are released upstream, point madmin at:
-gem "madmin", github: "anthony0030/madmin", branch: "extension-load-hooks"
+# The load hooks shipped in madmin 2.5.1, but until the read-only and
+# extension-seams PRs (excid3/madmin#348, #352) are released, point madmin at:
+gem "madmin", github: "anthony0030/madmin"
 ```
 
 ## Usage
