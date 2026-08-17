@@ -2,9 +2,9 @@ source "https://rubygems.org"
 
 gemspec
 
-# Load hooks shipped in madmin 2.5.1; until the read-only and extension-seams
-# PRs (excid3/madmin#348, #352) are merged and released, use the fork:
-gem "madmin", github: "anthony0030/madmin"
+# Everything this gem needs is merged upstream (excid3/madmin#348, #350, #352)
+# but not yet released; track upstream main until a release after 2.5.1:
+gem "madmin", github: "excid3/madmin"
 
 group :development, :test do
   gem "rails"

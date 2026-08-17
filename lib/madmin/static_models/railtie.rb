@@ -22,7 +22,7 @@ module Madmin
             # predates the extension seams (readonly?, model_column_names,
             # paginate_collection) that this gem builds on.
             warn "madmin-static_models requires a madmin version with extension load hooks and seams " \
-              "(excid3/madmin#348, #352). Until they are released, use: gem \"madmin\", github: \"anthony0030/madmin\""
+              "(excid3/madmin#348, #352). Until a release after 2.5.1 ships, use: gem \"madmin\", github: \"excid3/madmin\""
           end
         end
       end
