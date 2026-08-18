@@ -21,8 +21,7 @@ module Madmin
             # The :madmin_resource load hook never fired, so this madmin
             # predates the extension seams (readonly?, model_column_names,
             # paginate_collection) that this gem builds on.
-            warn "madmin-static_models requires a madmin version with extension load hooks and seams " \
-              "(excid3/madmin#348, #352). Until a release after 2.5.1 ships, use: gem \"madmin\", github: \"excid3/madmin\""
+            warn "madmin-static_models requires madmin >= 2.6 (extension load hooks and seams)."
           end
         end
       end

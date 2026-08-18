@@ -16,11 +16,9 @@ Add to your Gemfile:
 
 ```ruby
 gem "madmin-static_models"
-
-# Everything this gem needs is merged in madmin's main branch, but until a
-# release after 2.5.1 ships, point madmin at upstream main:
-gem "madmin", github: "excid3/madmin"
 ```
+
+Requires madmin >= 2.6.
 
 ## Usage
 
