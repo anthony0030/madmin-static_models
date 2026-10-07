@@ -8,6 +8,7 @@ require "madmin/static_models/resource_extension"
 require "madmin/static_models/resource_builder_extension"
 require "madmin/static_models/controller_extension"
 require "madmin/static_models/search_extension"
+require "madmin/static_models/field_extension"
 require "madmin/static_models/railtie"
 
 module Madmin

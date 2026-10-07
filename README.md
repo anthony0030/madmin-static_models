@@ -18,7 +18,7 @@ Add to your Gemfile:
 gem "madmin-static_models"
 ```
 
-Requires madmin >= 2.6, < 3. For Madmin 3, use madmin-static_models 0.2 or later.
+Requires madmin >= 3.2, < 4. For Madmin 2.6 to 2.x, use madmin-static_models 0.1.x.
 
 ## Usage
 
@@ -53,11 +53,12 @@ That's it — the resource shows up in Madmin like any other, minus the write ac
 
 ## How it works
 
-The gem attaches to Madmin through its `ActiveSupport` load hooks (`:madmin_resource`, `:madmin_resource_controller`) and prepends small modules that answer differently for static models and call `super` for everything else:
+The gem attaches to Madmin through its `ActiveSupport` load hooks (`:madmin_resource`, `:madmin_resource_controller`, `:madmin_field`) and prepends small modules that answer differently for static models and call `super` for everything else:
 
 - `Resource.readonly?` returns true, which makes Madmin hide write links and block write actions
 - `Resource.model_column_names` comes from the adapter instead of the database
-- Pagination, sorting and search run over plain arrays in memory
+- Pagination, sorting and search run over plain arrays in memory, paginated with `Madmin::Page`
+- Fields return no `filter_type`, so static resources don't offer Madmin's index filters (they build SQL)
 - `show_path`/`edit_path` are built manually since static records don't support polymorphic routing
 
 ## Adding a backend

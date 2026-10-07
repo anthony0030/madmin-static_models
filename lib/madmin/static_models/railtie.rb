@@ -12,6 +12,10 @@ module Madmin
           singleton_class.prepend Madmin::StaticModels::ResourceExtension
         end
 
+        ActiveSupport.on_load(:madmin_field) do
+          prepend Madmin::StaticModels::FieldExtension
+        end
+
         # Plain lib classes; referencing them triggers madmin's autoload.
         Madmin::Search.prepend Madmin::StaticModels::SearchExtension
         Madmin::ResourceBuilder.prepend Madmin::StaticModels::ResourceBuilderExtension
@@ -21,7 +25,7 @@ module Madmin
             # The :madmin_resource load hook never fired, so this madmin
             # predates the extension seams (readonly?, model_column_names,
             # paginate_collection) that this gem builds on.
-            warn "madmin-static_models requires madmin >= 2.6 (extension load hooks and seams)."
+            warn "madmin-static_models requires madmin >= 3.2 (extension load hooks and Madmin::Page)."
           end
         end
       end

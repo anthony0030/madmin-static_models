@@ -23,22 +23,8 @@ module Madmin
 
       def paginate_static(collection)
         records = collection.to_a
-
-        # Pagy >= 43 paginates plain arrays natively, with the request context
-        # that its nav helpers need.
-        return pagy(records) if defined?(Pagy::Method) && is_a?(Pagy::Method)
-
-        # Older pagy: build the pager by hand.
-        page = [params[:page].to_i, 1].max
-        defaults = Pagy::DEFAULT || {}
-        limit = (params[:limit] || defaults[:limit] || defaults[:items] || 20).to_i
-        pager = begin
-          Pagy.new(count: records.size, page: page, limit: limit)
-        rescue ArgumentError
-          Pagy.new(count: records.size, page: page, items: limit)
-        end
-        per_page = pager.respond_to?(:limit) ? pager.limit : pager.items
-        [pager, records.slice(pager.offset, per_page) || []]
+        page = Madmin::Page.new(count: records.size, page: params[:page], per_page: Madmin::Page.per_page_for(params[:per_page]))
+        [page, records.slice(page.offset, page.per_page) || []]
       end
 
       def sort_static(collection, column, direction)
