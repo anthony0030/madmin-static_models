@@ -18,7 +18,14 @@ Add to your Gemfile:
 gem "madmin-static_models"
 ```
 
-Requires madmin >= 3.2, < 4. For Madmin 2.6 to 2.x, use madmin-static_models 0.1.x.
+Pick the version that matches your Madmin:
+
+| Madmin      | madmin-static_models | Gemfile                                    |
+| ----------- | -------------------- | ------------------------------------------ |
+| 2.6 – 2.x   | 0.1.x                | `gem "madmin-static_models", "~> 0.1.1"`   |
+| 3.2 – 3.x   | 0.2.x                | `gem "madmin-static_models", "~> 0.2"`     |
+
+Madmin 3.0 and 3.1 aren't supported. Upgrade to Madmin 3.2 or later.
 
 ## Usage
 
