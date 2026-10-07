@@ -18,7 +18,7 @@ Add to your Gemfile:
 gem "madmin-static_models"
 ```
 
-Requires madmin >= 2.6.
+Requires madmin >= 2.6, < 3. For Madmin 3, use madmin-static_models 0.2 or later.
 
 ## Usage
 
